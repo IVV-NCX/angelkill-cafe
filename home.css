@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css2?family=VT323&display=swap);
+
+/* colors */
+:root{
+  --black: #222129;
+  --orange: #FFA86A;
+  --white: #FFFFFF;
+  --blue: #a9cde7;
+}
+/* body */
+body {
+  font-family: "VT323", monospace;
+  background-color: var(--black);
+  /*background-image: url('https://angelkill.neocities.org/ezgif-258458a51c11e15b.gif');*/
+}
+
+.container {
+  width:85vw;
+  height: fit-content;
+  margin: auto;
+  border-top:15px solid #222129;
+  border-left: 30px solid #222129;
+  border-right: 30px solid #222129;
+  border-bottom: 30px solid #222129;
+  background-color: #222129;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  color: #FFA86A;
+  font-size: 64px
+}
+
+h2 {
+  font-weight: 500;
+  color: #FFA868;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+p {
+  color: #FFA86A;
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* headers and stuff */
+
+.angelkill {
+  width: fit-content;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 32px;
+  letter-spacing: 3px;
+  padding: 15px 30px;
+  position: relative;
+}
+
+
+.menu-item {
+  width:auto;
+  padding-top:30px;
+  padding-bottom: 30px;
+  display:block;
+}
+.menu-item a {
+  color: #FFA86A;
+  font-size: 32px;
+  margin: 5px;
+}
+.menu-item a:hover {
+  color:#000000;
+  background-color: #ffffff;
+}
+
+/* weird thing for the x box i use. */
+.close-link {
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 32px;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  padding: 6px 16px;
+  border-top: 4px solid var(--orange);
+  border-left: 4px solid var(--orange);
+  border-right: 4px solid var(--orange);
+  border-bottom: 4px solid var(--orange);
+  box-shadow: 5px 5px var(--orange);
+}
+.close-link:hover {
+  color: white;
+}
+
+.leftcolumn {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-carousel {
+  position: relative;
+  display: block;
+  width: 190px;
+  height:125px;
+  border: 5px solid var(--orange);
+  margin-top: 30px;
+}
+.img-carousel img {
+  position: absolute;
+  left:0%;
+  top:0%;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity: 0;
+  animation: carousel 9s steps(1,end) infinite;
+  animation-delay: calc(var(--i) * 3s);
+}
+
+@keyframes carousel {
+  0%, 40% {
+    opacity: 1;
+    visibility: visible;
+  }
+  40%, 100% {
+    opacity: 1;
+    visibility: hidden;
+  }
+}

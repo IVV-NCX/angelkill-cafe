@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css2?family=VT323&display=swap);
+
+/* colors */
+:root{
+  --black: #222129;
+  --orange: #FFA86A;
+  --blue: #a9cde7;
+}
+/* body */
+body {
+  font-family: "VT323", monospace;
+  background-color: var(--black);
+  /*background-image: url('https://angelkill.neocities.org/ezgif-258458a51c11e15b.gif');*/
+}
+h1{
+    color: var(--orange);
+    font-size: 64px;
+}
+.Box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85vw;
+    height: 85vh;
+    margin: auto;
+    border-top:5vw solid #222129;
+    border-left: 5vw solid #222129;
+    border-right: 5vw solid #222129;
+    border-bottom: 5vw solid #222129;
+    background-color: #222129;
+    position: relative;
+    color: var(--orange);
+    font-size: 2vw;
+    line-height: 1.2vw;
+}
+
+.boxanim {
+  animation: boxload 0s forwards;
+  animation-delay: 5s;
+}
+@keyframes boxload {
+  0%, 100% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% { 
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.titleimg img{
+    float:left;
+    margin-right: 2vw;
+    margin-bottom: 150%;
+    width: 5vw;
+    height: 5vw;
+}
+
+.crt {
+    text-shadow:
+    0 0 0.5vw color-mix(in srgb, var(--orange) 90%, transparent),
+    0 0 1vw color-mix(in srgb, var(--orange) 50%, transparent),
+    0 0 2vw color-mix(in srgb, var(--orange) 30%, transparent);
+    animation:
+    crtFlicker 3s steps(2, end) infinite;
+}
+@keyframes crtFlicker {
+    0%, 100% {opacity: 1;}
+    10% {opacity: 0.9;}
+    20% {opacity: 1;}
+    30% {opacity: 0.75;}
+    40% {opacity: 0.9;}
+    50% {opacity: 0.95;}
+    60% {opacity: 1;    }
+    70% {opacity: 0.9;}
+    80% {opacity: 0.8;}
+    90% {opacity: 0.85;}
+}
+
+.anima {
+    opacity: 0;
+    animation: anima 0.25s forwards;
+    animation-delay: calc((var(--i) - 1) * 250ms)
+}
+@keyframes anima {
+  0%, 100% { opacity: 0; visibility: hidden;}
+  100% { opacity: 1; visibility: visible;}
+}
+
+.anima2 {
+    opacity: 0;
+    animation: anima2 0.25s forwards;
+    animation-delay: calc((var(--i) - 1) * 250ms + 2000ms);
+    animation-fill-mode: forwards;
+}
+.anima3 {
+    opacity: 0;
+    animation: anima3 0.2s forwards;
+    animation-delay: 3000ms;
+}
+@keyframes anima2 {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1%, 100% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {visibility: hidden;}
+}
+@keyframes anima3 {
+  0%, 100% { opacity: 0; visibility: hidden;}
+  100% { opacity: 1; visibility: visible;}
+}
+.memory-stack {
+    position: relative;
+    margin: 0px;
+}
+.mem {
+    position: absolute;
+    top:100%;
+    left:7vw;
+}
+
+.button {
+   position: absolute;
+   inset: 0; 
+   width: 100%;
+   height:100%;
+   border: none;
+   background: transparent;
+   opacity: 0;
+   z-index: 10;
+}
+
+/*---------------------------------------*/
+
+.overlap {
+  position: absolute;
+}
+
+.boxaniminv {
+  opacity: 0;
+  animation: boxloadinv 0s forwards;
+  animation-delay: 6s;
+}
+@keyframes boxloadinv {
+  0%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% { 
+    opacity: 1;
+    visibility: visible;
+  }
+}

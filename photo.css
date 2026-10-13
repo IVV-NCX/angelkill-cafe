@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css2?family=VT323&display=swap);
+
+/* colors */
+:root{
+  --black: #222129;
+  --orange: #FFA86A;
+  --white: #FFFFFF;
+  --blue: #a9cde7;
+}
+/* body */
+body {
+  font-family: "VT323", monospace;
+  background-color: var(--black);
+  /*background-image: url('https://angelkill.neocities.org/ezgif-258458a51c11e15b.gif');*/
+}
+
+.container {
+  width:85vw;
+  height: fit-content;
+  margin: auto;
+  border-top:15px solid var(--black);
+  border-left: 30px solid var(--black);
+  border-right: 30px solid var(--black);
+  border-bottom: 30px solid var(--black);
+  background-color: var(--black);
+  position: relative;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 15px;
+grid-row-gap: 5px; 
+}
+
+.div1 { 
+  grid-area: 1 / 1 / 2 / 4; 
+}
+.div2 { 
+  grid-area: 2 / 1 / 3 / 3; 
+  padding: 10px;
+  outline: 3px solid var(--white);
+}
+.div3 { 
+  grid-area: 2 / 3 / 3 / 4; 
+  padding: 10px;
+  outline: 3px solid var(--white);
+}
+
+
+
+
+
+h1 {
+  font-weight: bold;
+  color: var(--orange);
+  font-size: 64px
+}
+h2 {
+  font-weight: 500;
+  color: var(--orange);
+  font-size: 32px;
+  text-decoration: underline;
+}
+p {
+  color: var(--orange);
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a{
+  color: var(--orange);
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.div3 a:hover{
+  color: var(--black);
+  background-color: var(--white);
+}
+smol{
+  color: #FFA86A;
+  font-size: 16px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+/* headers and stuff */
+
+.angelkill {
+  width: fit-content;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 32px;
+  letter-spacing: 3px;
+  padding: 15px 30px;
+  position: relative;
+}
+
+
+.menu-item {
+  width:auto;
+  padding-top:30px;
+  padding-bottom: 30px;
+  display:block;
+}
+.menu-item a {
+  color: var(--orange);
+  font-size: 32px;
+  margin: 5px;
+}
+.menu-item a:hover {
+  color:var(--black);
+  background-color: var(white);
+}
+
+/* weird thing for the x box i use. */
+.close-link {
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 32px;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  padding: 6px 16px;
+  border-top: 4px solid var(--orange);
+  border-left: 4px solid var(--orange);
+  border-right: 4px solid var(--orange);
+  border-bottom: 4px solid var(--orange);
+  box-shadow: 5px 5px var(--orange);
+}
+.close-link:hover {
+  color: white;
+}
+
+.leftcolumn {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+/*--------------------------------------*/
+.fillbox {
+  display: block;
+  width: auto;
+  text-align: center;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-color: var(--orange);
+  background-color: var(--orange);
+}
+
+.div2 > p:not(.fillbox) {
+  margin-left: 5px;
+}
+
+.gallery{
+  display:block;
+  width: auto;
+  height: auto;
+  margin: 20px;
+  object-fit: cover;
+  text-decoration: none;
+}
+.gallery img{
+  position: relative;
+
+  left:0%;
+  top:0%;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  border: 3px solid var(--white);
+}
+.galpa {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin-left: 5px;
+margin-right: 5px;
+}
+
+.gal1 { grid-area: 1 / 1 / 2 / 2;   
+  display: block;
+  margin-right: auto;
+}
+.gal2 { grid-area: 1 / 2 / 2 / 3;
+  display: block;
+  margin: auto;
+}
+.gal3 { grid-area: 1 / 3 / 2 / 4; 
+  display: block;
+  margin-left: auto;
+}
+
+.gallery2{
+  display:block;
+  width: auto;
+  height: auto;
+  margin-top: 4vh;
+  object-fit: cover;
+  text-decoration: none;
+
+}
+.gallery2 img{
+  position: relative;
+  left:0%;
+  top:0%;
+  width:15vw;
+  height:15vw;
+  object-fit:fill;
+  border: 3px solid var(--white);
+}
+
