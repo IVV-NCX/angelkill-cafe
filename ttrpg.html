@@ -36,6 +36,7 @@ A message looks like this:
 replace kefir with whoever.
 Add multiple messages in a row with <p></p>
 -->
+<div class="vn-window">
 <div class="vn">
     <div class="message" elf="kefir">
         <div class="elf-art"></div>
@@ -93,6 +94,114 @@ Add multiple messages in a row with <p></p>
             <p>Maybe we should buy something?</p>
     </div>
 </div>
-<!---->
+
+<!-- bruh this is js i barely know this shit-->
+<div class="vn-controls">
+    <button id="back" type="button" disabled>Back</button>
+    <button id="next" type="button">Next</button>
+</div>
+</div>
+<script>
+const messages = [...document.querySelectorAll(".vn .message")];
+const dialogue = document.querySelector(".vn");
+const back = document.querySelector("#back");
+const next = document.querySelector("#next");
+const maxDialogueHeight = 780;
+let current = 0;
+
+function updateMessages() {
+    messages.forEach((message, index) => {
+        message.hidden = index !== current;
+    });
+
+    let firstVisible = current;
+    while (firstVisible > 0) {
+        const previousMessage = messages[firstVisible - 1];
+        previousMessage.hidden = false;
+        if (dialogue.scrollHeight > maxDialogueHeight) {
+            previousMessage.hidden = true;
+            break;
+        }
+        firstVisible--;
+    }
+    dialogue.scrollTop = dialogue.scrollHeight;
+
+    back.disabled = current === 0;
+    next.disabled = current === messages.length - 1;
+}
+
+next.addEventListener("click", () => {
+    if (current < messages.length - 1) current++;
+    updateMessages();
+});
+
+back.addEventListener("click", () => {
+    if (current > 0) current--;
+    updateMessages();
+});
+
+updateMessages();
+</script>
+
+<!-- vending machine-->
+<input type="radio" name="vending-state" id="idle" checked hidden>
+<input type="radio" name="vending-state" id="ready" hidden>
+<input type="radio" name="vending-state" id="avimancer" hidden>
+<input type="radio" name="vending-state" id="dollhouse" hidden>
+<input type="radio" name="vending-state" id="ttrpg3" hidden>
+<input type="radio" name="vending-state" id="ttrpg4" hidden>
+<input type="radio" name="vending-state" id="ttrpg5" hidden>
+<input type="radio" name="vending-state" id="ttrpg6" hidden>
+
+<div class="vending machine">
+
+
+    <!--insert money-->
+    <div class="coin">
+        <div class="status"></div>
+        <label for="ready" class="insert-coin">INSERT COIN HERE</label>
+    </div>
+<!-- Books -->
+    <div class="book-store">
+      <div class="book-avimancer">
+        <img src="https://placehold.co/150x150/e74c3c/white?text=avimncr">
+        <label for="avimancer" class="push-btn">10c</label>
+      </div>
+
+
+      <div class="book-dollhouse">
+        <img src="https://placehold.co/150x150/3498db/white?text=dh">
+        <label for="dollhouse" class="push-btn">10c</label>
+      </div>
+
+      <div class="book-ttrpg3">
+        <img src="https://placehold.co/150x150/2ecc71/white?text=ttrpg3">
+        <label for="ttrpg3" class="push-btn">10c</label>
+      </div>
+    </div>
+<!-- book details -->
+<div id="open-avimancer" class="overlay">
+    <div class="open-book">
+        <label for="idle" class="close-btn">&times;</label>
+        <h2>AVIMANCER WONDERLAND</h2>
+        <img src="https://placehold.co/150x150/e74c3c/white?text=Cola">
+    </div>
+</div>
+<div id="open-dollhouse" class="overlay">
+    <div class="open-book">
+        <label for="idle" class="close-btn">&times;</label>
+        <h2>DOLLHOUSE</h2>
+        <img src="https://placehold.co/150x150/3498db/white?text=dh">
+    </div>
+</div>
+<div id="open-ttrpg3" class="overlay">
+    <div class="open-book">
+        <label for="idle" class="close-btn">&times;</label>
+        <h2>TTRPG 3</h2>
+        <img src="https://placehold.co/150x150/2ecc71/white?text=ttrpg3">
+    </div>
+</div>
+</div>
+<!--end vending machine-->
 </div>
 </div>
